@@ -1,0 +1,102 @@
+/* Root auth container */
+.auth-page {
+    display: flex;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Left side - image or background */
+  .auth-image {
+    flex: 1;
+    background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e'); /* Ganti sesuai preferensi */
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.9);
+  }
+  
+  /* Right side - form */
+  .auth-form {
+    flex: 1;
+    padding: 60px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .auth-form h2 {
+    font-size: 28px;
+    color: #2e7d32;
+    margin-bottom: 30px;
+  }
+  
+  .auth-form .brand {
+    color: #4caf50;
+    font-weight: bold;
+  }
+  
+  .auth-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-form input {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.2s;
+  }
+  
+  .auth-form input:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  .auth-form .btn.primary {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .auth-form .btn.primary:hover {
+    background-color: #43a047;
+  }
+  
+  .auth-form p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .auth-form a {
+    color: #4caf50;
+    text-decoration: none;
+  }
+  
+  .auth-form a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive for mobile */
+  @media (max-width: 768px) {
+    .auth-page {
+      flex-direction: column;
+    }
+  
+    .auth-image {
+      display: none;
+    }
+  
+    .auth-form {
+      flex: none;
+      padding: 40px 20px;
+    }
+  }
+  
