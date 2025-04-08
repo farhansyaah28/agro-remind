@@ -18,10 +18,9 @@
 ## 🛠️ Cara Menjalankan Aplikasi
 
 1. **Clone repository ini**
-
-```bash
+   `bash
 git clone https://github.com/username/agroremind.git
-cd agroremind
+cd agroremind`
 
 2. **Install dependencies
 
@@ -55,3 +54,5 @@ src/
     CSS (Plain)
 
     localStorage (untuk penyimpanan data lokal)
+
+
