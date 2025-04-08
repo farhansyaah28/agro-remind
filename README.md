@@ -22,21 +22,21 @@
 git clone https://github.com/username/agroremind.git
 cd agroremind`
 
-2. **Install dependencies
+2. **Install dependencies**
 
 npm install
 
-3. **Jalankan aplikasi
+3. **Jalankan aplikasi**
 
 npm run dev
 
-4. **Akses di browser
+4. **Akses di browser**
 
-5. **Buka browser dan akses:
+5. **Buka browser dan akses:**
 
 http://localhost:5173
 
-📁 **Struktur Proyek
+📁 **Struktur Proyek**
 
 src/
 ├── AddPlant.jsx       // Halaman untuk tambah tanaman
@@ -45,7 +45,7 @@ src/
 ├── Dashboard.css      // Styling halaman
 └── Viewplans.css      // Styling halaman lainnya
 
-📦 **Teknologi
+📦 **Teknologi**
 
     React
 
