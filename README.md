@@ -1,12 +1,57 @@
-# React + Vite
+# 🌱 AgroRemind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**AgroRemind** adalah aplikasi berbasis React yang membantu pengguna mencatat dan memantau tanaman yang mereka tanam. Fitur-fitur seperti menambahkan tanaman, melihat daftar tanaman, mengedit, menghapus, dan mengekspor data ke CSV tersedia dalam antarmuka yang simpel dan modern.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Fitur Utama
 
-## Expanding the ESLint configuration
+- Tambah data tanaman (nama, jenis, tanggal tanam)
+- Tampilkan daftar tanaman
+- Filter tanaman berdasarkan jenis
+- Edit dan hapus data tanaman
+- Ekspor data tanaman ke file CSV
+- Simpan data secara lokal menggunakan `localStorage`
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Cara Menjalankan Aplikasi
+
+1. **Clone repository ini**
+
+```bash
+git clone https://github.com/username/agroremind.git
+cd agroremind
+
+2. **Install dependencies
+
+npm install
+
+3. **Jalankan aplikasi
+
+npm run dev
+
+4. **Akses di browser
+
+5. **Buka browser dan akses:
+
+http://localhost:5173
+
+📁 **Struktur Proyek
+
+src/
+├── AddPlant.jsx       // Halaman untuk tambah tanaman
+├── ViewPlants.jsx     // Halaman melihat tanaman
+├── main.jsx           // Entry point dan routing
+├── Dashboard.css      // Styling halaman
+└── Viewplans.css      // Styling halaman lainnya
+
+📦 **Teknologi
+
+    React
+
+    React Router DOM
+
+    CSS (Plain)
+
+    localStorage (untuk penyimpanan data lokal)
