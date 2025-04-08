@@ -45,7 +45,7 @@ export default function AddPlant() {
       </div>
 
       <div className="form-container">
-        <button className="btn-back" onClick={() => navigate(-1)}>🔙 Kembali</button>
+      <button className="btn-back" onClick={() => window.history.back()}>←</button>
         <h2>🌿 Tambah Tanaman Baru</h2>
 
         <form onSubmit={handleSubmit} className="form-card">

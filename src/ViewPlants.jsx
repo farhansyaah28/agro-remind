@@ -60,7 +60,7 @@ function ViewPlants() {
     </div>
 
     <div className="view-container">
-      <button className="btn-back" onClick={() => window.history.back()}>🔙 Kembali</button>
+      <button className="btn-back" onClick={() => window.history.back()}>←</button>
       <h2>🌱 Daftar Tanaman Anda</h2>
 
       <div className="toolbar">

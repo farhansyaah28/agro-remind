@@ -28,7 +28,7 @@ export default function RegisterPage() {
     localStorage.setItem('users', JSON.stringify(users));
 
     alert('Pendaftaran berhasil! Silakan login.');
-    navigate('/'); // Arahkan ke halaman login
+    navigate('/login'); // Arahkan ke halaman login
   };
 
   return (

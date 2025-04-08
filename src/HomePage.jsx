@@ -8,23 +8,21 @@ export default function HomePage() {
   return (
     <div className="homepage">
       <header className="header">
-        <h1 className="logo">AGROREMIND</h1>
+        <h1 className="logo" onClick={(e) => { e.preventDefault(); navigate('/'); }}>AGROREMIND</h1>
         <nav className="nav">
-          <a href="#">Beranda</a>
-          <a href="#">Fitur</a>
-          <a href="#">Panduan</a>
-          <a href="#">Kontak</a>
-
-          {/* ✅ Tombol Login & Sign Up yang berfungsi */}
-          <button className="btn" onClick={() => navigate('/login')}>Login</button>
-          <button className="btn primary" onClick={() => navigate('/register')}>Sign Up</button>
+          <a href="/panduan" onClick={(e) => { e.preventDefault(); navigate('/panduan'); }}>Panduan</a>
+          <a href="/kontak" onClick={(e) => { e.preventDefault(); navigate('/kontak'); }}>Kontak</a>
+          <div className="auth-buttons">
+            <button className="btn" onClick={() => navigate('/login')}>Login</button>
+            <button className="btn primary" onClick={() => navigate('/register')}>Sign Up</button>
+          </div>
         </nav>
       </header>
 
       <section className="hero">
         <h2>Selamat Datang di <span className="brand">AGROREMIND</span></h2>
         <p>Agroremind membantu petani dan pecinta tanaman menjadwalkan tanam & panen dengan mudah</p>
-        <button className="btn primary">Mulai Sekarang</button>
+        <button className="btn primary" onClick={() => navigate('/login')}>Mulai Sekarang</button>
       </section>
 
       <section className="features">
