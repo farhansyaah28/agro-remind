@@ -184,7 +184,7 @@ function TanamanSaya() {
                 </button>
                 <button 
                   className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
-                  onClick={() => navigate('/pengaturan')}
+                  onClick={() => navigate('/setting')}
                 >
                   <Settings size={16} className="mr-2" />
                   Pengaturan
@@ -246,13 +246,6 @@ function TanamanSaya() {
             >
               <HelpCircle size={18} />
               {sidebarOpen && <span>Panduan Pengguna</span>}
-            </button>
-            <button 
-              onClick={() => navigate('/pengaturan')} 
-              className="flex items-center space-x-2 p-3 rounded-md hover:bg-gray-50 text-gray-700"
-            >
-              <Settings size={18} />
-              {sidebarOpen && <span>Pengaturan</span>}
             </button>
           </div>
           

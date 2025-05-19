@@ -84,17 +84,24 @@ function TambahTanaman() {
     navigate('/lihat');
   };
   
-  // Fungsi untuk menangani logout
-  const handleLogout = () => {
-    console.log('Logging out...');
-    navigate('/login');
-  };
+  
   
   // Fungsi untuk menandai semua notifikasi telah dibaca
   const markAllNotificationsAsRead = () => {
     setNotifications([]);
   };
-
+// Fungsi untuk menangani logout
+  const handleLogout = () => {
+    alert("Anda telah keluar dari sistem");
+    // Dalam aplikasi nyata, ini akan membersihkan token, session, dll.
+  };
+  
+  // Fungsi untuk navigasi ke halaman setting
+   const navigateToSettings = () => {
+    navigate('/setting'); // Perbaikan: Menggunakan navigate alih-alih setCurrentPage
+    setShowMenu(false); // Menutup menu setelah navigasi
+  };
+  
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navbar */}
@@ -184,7 +191,7 @@ function TambahTanaman() {
             >
               <img
                 src="/api/placeholder/40/40"
-                alt="Profile"
+                alt=":*:"
                 className="h-8 w-8 rounded-full object-cover border-2 border-green-500"
               />
               <div className="flex items-center">
@@ -203,7 +210,7 @@ function TambahTanaman() {
                   <User size={16} className="mr-2" />
                   Profil Saya
                 </button>
-                <button className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">
+                <button onClick={navigateToSettings} className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">
                   <Settings size={16} className="mr-2" />
                   Pengaturan
                 </button>
@@ -247,10 +254,6 @@ function TambahTanaman() {
             <button onClick={() => navigate('/panduan')} className="flex items-center space-x-2 p-3 rounded-md hover:bg-gray-50 text-gray-700">
               <HelpCircle size={18} />
               <span>Panduan Pengguna</span>
-            </button>
-            <button onClick={() => navigate('/pengaturan')} className="flex items-center space-x-2 p-3 rounded-md hover:bg-gray-50 text-gray-700">
-              <Settings size={18} />
-              <span>Pengaturan</span>
             </button>
           </div>
         </div>
