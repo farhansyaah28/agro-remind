@@ -5,10 +5,12 @@ import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
 import HomePage from './HomePage';
 import Dashboard from './Dashboard';
-import AddPlant from './AddPlant';
-import ViewPlants from './ViewPlants';
+import TambahTanaman from './TambahTanaman';
+import TanamanSaya from './TanamanSaya';
 import Panduan from './Panduan';
 import Kontak from './Kontak';
+import KalenderPertanian from './KalenderPertanian';
+import Statistik from './Statistik';
 
 
 export default function App() {
@@ -21,8 +23,10 @@ export default function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/tambah" element={<AddPlant />} />
-        <Route path="/lihat" element={<ViewPlants />} />
+        <Route path="/tambah" element={<TambahTanaman />} />
+        <Route path="/lihat" element={<TanamanSaya />} />
+        <Route path="/kalender" element={<KalenderPertanian />} />
+        <Route path="/statistik" element={<Statistik />} />
       </Routes>
     </Router>
   );
