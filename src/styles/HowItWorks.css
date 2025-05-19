@@ -1,0 +1,242 @@
+.how-it-works {
+  padding: 6rem 0;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.how-it-works-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 4rem;
+}
+
+/* Left Side - Text Content */
+.how-it-works-content {
+  flex: 1;
+  max-width: 550px;
+}
+
+.how-it-works-subtitle {
+  color: #4CAF50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.how-it-works-heading {
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.how-it-works-title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.how-it-works-agro {
+  color: #4CAF50;
+  margin-right: 8px;
+}
+
+.how-it-works-remind {
+  color: #333;
+}
+
+.how-it-works-description {
+  color: #555;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.start-now-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(76, 175, 80, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.start-now-button:hover {
+  transform: translateY(-3px);
+  background-color: #45a049;
+  box-shadow: 0 12px 20px rgba(76, 175, 80, 0.4);
+}
+
+.start-now-button:active {
+  transform: translateY(-1px);
+}
+
+/* Right Side - Video Container */
+.video-container {
+  flex: 1;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  aspect-ratio: 16/9;
+  background-color: #f0f0f0;
+  max-width: 550px;
+  height: auto;
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.5s ease;
+}
+
+.video-container:hover {
+  transform: perspective(1000px) rotateY(0);
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.video-container:hover .video-overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+}
+
+.play-button {
+  width: 70px;
+  height: 70px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.play-button span {
+  color: white;
+  font-size: 1.7rem;
+  margin-left: 5px; /* Slight offset for play icon */
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+  background-color: #45a049;
+}
+
+.video-cta {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Decorative elements */
+.how-it-works-content::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(76, 175, 80, 0.05);
+  border-radius: 50%;
+  top: -30px;
+  left: -50px;
+  z-index: -1;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .how-it-works-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .how-it-works-content,
+  .video-container {
+    max-width: 100%;
+  }
+  
+  .how-it-works-title {
+    font-size: 2.5rem;
+  }
+  
+  .video-container {
+    transform: perspective(1000px) rotateY(0);
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 4rem 0;
+  }
+  
+  .how-it-works-title {
+    font-size: 2.2rem;
+  }
+  
+  .how-it-works-description {
+    font-size: 1rem;
+  }
+  
+  .play-button {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-it-works-container {
+    padding: 0 1.5rem;
+  }
+  
+  .how-it-works-title {
+    font-size: 2rem;
+  }
+  
+  .how-it-works-subtitle {
+    font-size: 1rem;
+  }
+  
+  .play-button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .play-button span {
+    font-size: 1.4rem;
+  }
+  
+  .video-cta {
+    font-size: 1rem;
+  }
+}

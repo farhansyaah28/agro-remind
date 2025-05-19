@@ -1,0 +1,208 @@
+/* Steps.css */
+
+.steps {
+  padding: 5rem 0;
+  background-color: #f8faf8;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional decorative elements */
+.steps::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgba(76, 175, 80, 0.03);
+  top: -150px;
+  right: -100px;
+  z-index: 0;
+}
+
+.steps-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Creating connecting lines between steps */
+.steps-container::before {
+  content: '';
+  position: absolute;
+  top: 3rem;
+  left: calc(16.67% + 30px);
+  right: calc(16.67% + 30px);
+  height: 4px;
+  background: linear-gradient(to right, transparent 0%, #4CAF50 15%, #4CAF50 85%, transparent 100%);
+  z-index: -1;
+}
+
+.step-card {
+  flex: 1;
+  background-color: white;
+  border-radius: 12px;
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid white;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+  z-index: 2;
+}
+
+.step-title {
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1.2rem;
+  min-height: 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-description {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Step card hover animations */
+.step-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: #4CAF50;
+  transition: width 0.3s ease;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.step-card:hover::after {
+  width: 100%;
+}
+
+/* Add step icons */
+.step-card:nth-child(1) .step-number::before {
+  content: '✓';
+  position: absolute;
+  font-size: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.step-card:nth-child(2) .step-number::before {
+  content: '🕒';
+  position: absolute;
+  font-size: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.step-card:nth-child(3) .step-number::before {
+  content: '🔔';
+  position: absolute;
+  font-size: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.step-card:hover .step-number::before {
+  font-size: 1.8rem;
+  opacity: 1;
+}
+
+.step-card:hover .step-number {
+  color: transparent;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .steps-container::before {
+    display: none;
+  }
+  
+  .step-title {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .steps-container {
+    flex-direction: column;
+    max-width: 500px;
+    gap: 3rem;
+  }
+  
+  .step-card {
+    margin-top: 2rem;
+  }
+  
+  .step-number {
+    top: -25px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .step-card:hover .step-number::before {
+    font-size: 1.5rem;
+  }
+  
+  /* Add vertical connector line */
+  .steps-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: linear-gradient(to bottom, transparent 0%, #4CAF50 10%, #4CAF50 90%, transparent 100%);
+    z-index: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .steps {
+    padding: 4rem 0 3rem;
+  }
+  
+  .step-title {
+    font-size: 1.2rem;
+  }
+  
+  .step-description {
+    font-size: 0.95rem;
+  }
+}

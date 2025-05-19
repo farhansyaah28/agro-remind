@@ -1,0 +1,180 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+/* For creating a transparent header that becomes solid on scroll */
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  padding: 0.8rem 5%;
+
+  .login-btn {
+    color: #000;
+  }
+}
+
+/* Logo styling */
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.logo-agro {
+  color: #4CAF50;
+  margin-right: 3px;
+}
+
+.logo-remind {
+  color: #333;
+}
+
+/* Navigation */
+.navigation {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #4CAF50;
+}
+
+/* Animated underline for nav links */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #4CAF50;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Authentication buttons */
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.login-btn, .signup-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #4CAF50;
+}
+
+.login-btn:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  color: #000;
+}
+
+.signup-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.25);
+}
+
+.signup-btn:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.35);
+  color: #000;
+}
+
+/* Mobile menu button (only visible on small screens) */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Responsive styles */
+@media (max-width: 968px) {
+  .navigation {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background-color: white;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.4s ease-in-out;
+    pointer-events: none;
+  }
+  
+  .navigation.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    pointer-events: all;
+  }
+  
+  .nav-link {
+    padding: 1rem 2rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+  
+  .auth-buttons {
+    gap: 0.5rem;
+  }
+  
+  .login-btn, .signup-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+}

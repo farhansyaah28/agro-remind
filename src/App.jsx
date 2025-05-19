@@ -1,14 +1,14 @@
 // src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginPage from './LoginPage';
-import RegisterPage from './RegisterPage';
-import HomePage from './HomePage';
-import Dashboard from './Dashboard';
-import AddPlant from './AddPlant';
-import ViewPlants from './ViewPlants';
-import Panduan from './Panduan';
-import Kontak from './Kontak';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import HomePage from './pages/HomePage';
+import Dashboard from './pages/Dashboard';
+import AddPlant from './pages/AddPlant';
+import ViewPlants from './pages/ViewPlants';
+import Panduan from './pages/Panduan';
+import Kontak from './pages/Kontak';
 
 
 export default function App() {
