@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/HowItWorks.css'; // Make sure to save the CSS file to this path
 import farmVideoThumbnail from '../assets/farm-video-thumbnail.jpg';
 
 function HowItWorks() {
+  const navigate = useNavigate();
   return (
     <section className="how-it-works" id="how-it-works">
       <div className="how-it-works-container">
@@ -16,7 +18,7 @@ function HowItWorks() {
           <p className="how-it-works-description">
             AgroRemind membantu petani dan pecinta tanaman mengelola jadwal tanam dan panen dengan mudah. Hanya dengan tiga langkah sederhana, Anda bisa mendapatkan rekomendasi waktu tanam terbaik dan pengingat otomatis untuk merawat tanaman.
           </p>
-          <button className="start-now-button">
+          <button className="start-now-button" onClick={() => navigate('/register')}>
             Mulai Sekarang
           </button>
         </div>
