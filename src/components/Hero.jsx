@@ -14,8 +14,7 @@ function Hero() {
         <p className="hero-description">
           Agroremind membantu petani dan pecinta tanaman menjadwalkan tanam & panen dengan mudah
         </p>
-        {/* Optional CTA button - uncomment if needed */}
-        <button className="cta-button">Mulai Sekarang</button>
+        
       </div>
       <div className="hero-tagline">
         <p>EASILY MANAGE YOUR</p>

@@ -22,6 +22,12 @@
   .login-btn {
     color: #000;
   }
+  .logo-agro {
+    color: #4CAF50;
+  }
+  .nav-link:hover {
+    color: #4CAF50;
+  }
 }
 
 /* Logo styling */
@@ -33,7 +39,7 @@
 }
 
 .logo-agro {
-  color: #4CAF50;
+  color: #fff;
   margin-right: 3px;
 }
 
@@ -57,7 +63,7 @@
 }
 
 .nav-link:hover {
-  color: #4CAF50;
+  color: #ffff; 
 }
 
 /* Animated underline for nav links */

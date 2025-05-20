@@ -9,6 +9,7 @@ import HowItWorks from '../components/HowItWorks';
 import Steps from '../components/Steps';
 import Footer from '../components/Footer';
 import'../styles/index.css';
+import '../styles/HomePage.css'
 
 export default function HomePage() {
 
