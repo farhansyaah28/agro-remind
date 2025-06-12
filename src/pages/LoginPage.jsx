@@ -9,26 +9,35 @@ function LoginPage() {
   const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const emailNormalized = email.trim().toLowerCase();
-    const users = JSON.parse(localStorage.getItem('users')) || {};
-    const user = users[emailNormalized];
+  try {
+    const response = await fetch('http://localhost:5000/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    });
 
-    if (!user) {
-      alert(`Email ${emailNormalized} belum terdaftar. Silakan daftar terlebih dahulu.`);
-      return;
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || 'Gagal login');
     }
 
-    if (user.password !== password) {
-      alert('Password salah!');
-      return;
-    }
+    // Simpan token & data user
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('user', JSON.stringify(data.user));
 
-    localStorage.setItem('loggedInUser', JSON.stringify(user));
+    // Arahkan ke dashboard
     navigate('/dashboard');
-  };
+  } catch (err) {
+    alert(err.message);
+  }
+};
+
 
   return (
     <div className="auth-container">

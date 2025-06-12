@@ -1,9 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, Leaf, Droplet, Sun, Filter, ChevronDown, Edit, Trash2, Eye, Bell, HelpCircle, Settings, User, LogOut, Home, Calendar, PieChart, Clipboard, Users, Plus, Menu } from 'lucide-react';
+
 // Import fungsi navigasi dari react-router-dom
 import { useNavigate } from 'react-router-dom';
 
 function TanamanSaya() {
+
+  // const [tanaman, setTanaman] = useState([]);
+
+  // useEffect(() => {
+  //   fetch('http://localhost:5000/api/tanaman', {
+  //     headers: {
+  //       'Authorization': `Bearer ${localStorage.getItem('token')}`
+  //     }
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => setTanaman(data))
+  //     .catch(err => console.error('Error fetching tanaman:', err));
+  // }, []);
   // Menggunakan useNavigate hook dari react-router-dom
   const navigate = useNavigate();
   
@@ -213,7 +227,7 @@ function TanamanSaya() {
               {sidebarOpen && <span>Beranda</span>}
             </button>
             <button 
-              onClick={() => navigate('/tanaman')} 
+              onClick={() => navigate('/lihat')} 
               className="flex items-center space-x-2 p-3 rounded-md bg-green-100 text-green-700"
             >
               <Leaf size={18} />

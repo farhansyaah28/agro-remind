@@ -21,33 +21,51 @@ function RegisterPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      alert('Password dan konfirmasi tidak sama!');
+  if (formData.password !== formData.confirmPassword) {
+    alert('Password dan konfirmasi tidak sama!');
+    return;
+  }
+
+  try {
+    const response = await fetch('http://localhost:5000/api/auth/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        password: formData.password
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      // Jika backend memberi error validasi
+      if (data.errors && Array.isArray(data.errors)) {
+        const messages = data.errors.map(err => err.msg).join('\n');
+        alert(messages); // Tampilkan semua pesan validasi
+      } else {
+        alert(data.message || 'Terjadi kesalahan');
+      }
       return;
     }
-
-    const emailNormalized = formData.email.trim().toLowerCase();
-    const users = JSON.parse(localStorage.getItem('users')) || {};
-
-    if (users[emailNormalized]) {
-      alert(`Email ${emailNormalized} sudah terdaftar. Silakan login.`);
-      return;
-    }
-
-    users[emailNormalized] = {
-      name: formData.name.trim(),
-      email: emailNormalized,
-      password: formData.password
-    };
-
-    localStorage.setItem('users', JSON.stringify(users));
 
     alert('Registrasi berhasil! Silakan login.');
     navigate('/login');
-  };
+
+  } catch (err) {
+    alert('Gagal mendaftar. Coba lagi nanti.');
+    console.error(err);
+  }
+};
+
+
+
 
   return (
     <div className="auth-container">

@@ -163,8 +163,10 @@ function PanduanPengguna() {
 
    // Fungsi untuk menangani logout
   const handleLogout = () => {
-    alert("Anda telah keluar dari sistem");
-    // Dalam aplikasi nyata, ini akan membersihkan token, session, dll.
+    // Handle logout logic here
+    console.log("Logout clicked");
+    // Setelah logout, navigasi ke halaman login
+    navigate('/login');
   };
   
   // Fungsi untuk navigasi ke halaman setting
